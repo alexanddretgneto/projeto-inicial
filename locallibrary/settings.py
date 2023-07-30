@@ -22,6 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag'
 import os
+from dotenv import load_dotenv
+
+import  djongo 
+
+
+load_dotenv()
+
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -46,6 +53,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Add our new application 
     'catalog.apps.CatalogConfig', #This object was created for us in /catalog/apps.py
+]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'catalog', 'static'),
 ]
 
 MIDDLEWARE = [
@@ -89,6 +99,18 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'ENFORCE_SCHEMA': True,
+#         'CLIENT': {
+#             'host': os.getenv('MONGODB_URI'),
+#         },
+#         'NAME': os.getenv('DATABASE_NAME'),
+#     }
+# }
 
 
 # Password validation

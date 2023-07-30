@@ -20,16 +20,67 @@ The main features that have currently been implemented are:
 
 ## Quick Start
 
+
+# projeto-iguacu-lanche
+Criação de site para uma lanchonetye local
+
+        PARA A CONSTRUÇÃO DESTE PROJETO USEI ESTES PASSOS
+
+1 pip install virtualenv
+
+2 mkdir meu_projeto
+
+3 cd meu_projeto
+
+4 virtualenv env
+
+5 env\Scripts\activate     desativando: deactivate
+
+6 pip install django
+
+7 django-admin startproject ProjLanche . (ProjLanche)
+
+8 python manage.py startapp AppLanche   (AppLanche)
+
+9 python manage.py migrate
+
+10 python manage.py createsuperuser
+
+
+        CRIANDO UM SUPER USUÁRIO
+
+1 python manage.py createsuperuser
+
+        RODANDO O PROJETO
+
+1 python manage.py runserver
+
+
+        TRAZENDO FUNCIONALIDADES AO PROJETO DJANGO
+
+O objetivo é criar um aplicativo que no FrontEnd o usuario possa se cadastrar e fazer login para que possa utilizar o aplicativo compluetamente
+
+Para isso é preciso
+
+1 De uma página Inicial com um "MenudoApp" para que exiba duas telas diferentes: cadastrar e login e depois de logado o usuario entre apenas nas páginas de clientes logados
+
+1 pip3 install -r requirements.txt
+2 python3 manage.py makemigrations
+3 python3 manage.py migrate
+4 python3 manage.py collectstatic
+5 python3 manage.py test # Run the standard tests. These should all pass.
+python3 manage.py createsuperuser # Create a superuser
+python3 manage.py runserver
+
 To get this project up and running locally on your computer:
 1. Set up the [Python development environment](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment).
    We recommend using a Python virtual environment.
    > **Note:** This has been tested against Django 3.1.2 (and may not work or be "optimal" for other versions).
 1. Assuming you have Python setup, run the following commands (if you're on Windows you may use `py` or `py -3` instead of `python` to start Python):
    ```
-   pip3 install -r requirements.txt
-   python3 manage.py makemigrations
-   python3 manage.py migrate
-   python3 manage.py collectstatic
+   1 python3 manage.py makemigrations
+   2 python3 manage.py migrate
+   3 python3 manage.py collectstatic
    python3 manage.py test # Run the standard tests. These should all pass.
    python3 manage.py createsuperuser # Create a superuser
    python3 manage.py runserver
